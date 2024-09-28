@@ -1,6 +1,6 @@
 {
-  "builds": [
-    { "src": "src/index.html", "use": "@vercel/static" }
-  ],
-  "outputDirectory": "vercel/output"
+  "outputDirectory": "public",  // Use the correct output directory (or 'vercel/output')
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ]
 }
