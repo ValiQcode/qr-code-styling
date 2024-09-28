@@ -1,6 +1,5 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, "./");
 const srcPath = path.resolve(rootPath, "src");
@@ -26,16 +25,7 @@ const shared = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new FileManagerPlugin({
-      events: {
-        onEnd: {
-          copy: [
-            { source: tmpPath + '/**/*', destination: libPath },
-          ],
-          delete: [tmpPath],
-        },
-      },
-    }),
+    // FileManagerPlugin removed
   ],
   resolve: {
     extensions: [".ts", ".js"]
