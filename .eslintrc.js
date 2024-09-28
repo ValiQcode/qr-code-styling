@@ -12,5 +12,8 @@ module.exports = {
   ],
   parserOptions: {
     sourceType: "module"
+  },
+  rules: {
+    "jest/no-done-callback": "off" // Disabling the rule globally
   }
 };
