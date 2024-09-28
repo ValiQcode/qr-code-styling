@@ -3,8 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const rootPath = path.resolve(__dirname, "./");
 const srcPath = path.resolve(rootPath, "src");
-const libPath = path.resolve(rootPath, "lib");
-const tmpPath = path.resolve(rootPath, "tmp");
+const publicPath = path.resolve(rootPath, "public");
 
 const shared = {
   entry: srcPath + "/index.ts",
@@ -25,7 +24,6 @@ const shared = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // FileManagerPlugin removed
   ],
   resolve: {
     extensions: [".ts", ".js"]
@@ -35,7 +33,7 @@ const shared = {
 module.exports = [{
   ...shared,
   output: {
-    path: tmpPath,
+    path: publicPath, // Ensure all output goes to 'public'
     filename: "qr-code-styling.js",
     library: "QRCodeStyling",
     libraryTarget: "umd",
@@ -44,7 +42,7 @@ module.exports = [{
 }, {
   ...shared,
   output: {
-    path: tmpPath,
+    path: publicPath, // Ensure all output goes to 'public'
     filename: "qr-code-styling.common.js",
     library: "QRCodeStyling",
     libraryTarget: "commonjs",
