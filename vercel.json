@@ -1,6 +1,6 @@
 {
   "builds": [
-    { "src": "src/**/*", "use": "@vercel/node" }
+    { "src": "src/index.html", "use": "@vercel/static" }
   ],
-  "outputDirectory": "lib"
+  "outputDirectory": "vercel/output"
 }
