@@ -6,17 +6,17 @@ const config = commonConfig;
 module.exports = (env, argv) => {
   config.mode = argv.mode;
 
-  // Ensure the output directory is 'public'
+  // Set the output directory to 'public' for Vercel
   config.output = {
-    path: path.resolve(__dirname, 'public'), // Output files to 'public'
-    filename: 'bundle.js', // Output JavaScript bundle
+    path: path.resolve(__dirname, 'public'), // Ensure output is in 'public'
+    filename: 'bundle.js', // The output JavaScript bundle
   };
 
-  // Use HtmlWebpackPlugin to move index.html to the 'public' directory
+  // Use HtmlWebpackPlugin to move index.html to 'public'
   config.plugins = [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Your source index.html file
-      filename: 'index.html' // Ensure index.html is outputted to 'public'
+      template: './src/index.html', // The source index.html file in 'src'
+      filename: 'index.html' // Output to 'public/index.html'
     }),
   ];
 
