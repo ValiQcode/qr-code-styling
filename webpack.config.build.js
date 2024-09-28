@@ -15,9 +15,9 @@ module.exports = (env, argv) => {
   // Add HtmlWebpackPlugin to automatically move index.html to 'public'
   config.plugins = [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // The source index.html file
-      filename: 'index.html' // The output file in 'public' directory
-    })
+      template: './src/index.html', // The source index.html file in 'src'
+      filename: 'index.html', // The output file in 'public' directory
+    }),
   ];
 
   if (argv.mode === 'development') {
