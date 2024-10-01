@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const commonConfig = require('./webpack.config.common.js');
-const config = commonConfig;
+const commonConfig = require('./webpack.config.common.js'); // Import common config
 
 module.exports = (env, argv) => {
+  const config = commonConfig; // Start with common config
+
   config.mode = argv.mode;
 
   // Set the output directory to 'public' for Vercel
@@ -13,25 +14,12 @@ module.exports = (env, argv) => {
   };
 
   // Use HtmlWebpackPlugin to move index.html to 'public'
-  config.plugins = [
+  config.plugins.push(
     new HtmlWebpackPlugin({
       template: './src/index.html', // The source index.html file in 'src'
-      filename: 'index.html', // Output to 'public/index.html'
-    }),
-    ...config.plugins // Include any other plugins from commonConfig
-  ];
-
-  return config;
-};
-
-  if (argv.mode === 'development') {
-    config.devtool = 'inline-source-map';
-    config.watch = true;
-  }
-
-  if (argv.mode === 'production') {
-    config.devtool = 'source-map';
-  }
+      filename: 'index.html' // Output to 'public/index.html'
+    })
+  );
 
   return config;
 };
