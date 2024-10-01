@@ -7,6 +7,7 @@
   ]
   "cleanUrls": true,
   "trailingSlash": false,
+  "cache": false,
   "rewrites": [
     { "source": "/", "destination": "/index.html" }
   ]
