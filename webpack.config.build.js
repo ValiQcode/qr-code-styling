@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
 
   // Set the output directory to 'public' for Vercel
   config.output = {
-    path: path.resolve(__dirname, 'public'), // Ensure output is in 'public'
+    path: path.resolve(__dirname, 'lib'), // Ensure output is in 'public'
     filename: 'bundle.js', // The output JavaScript bundle
   };
 
