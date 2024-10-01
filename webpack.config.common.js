@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const rootPath = path.resolve(__dirname, "./");
 const srcPath = path.resolve(rootPath, "src");
-const publicPath = path.resolve(rootPath, "public"); // Output to 'public'
+const publicPath = path.resolve(rootPath, "lib");
 
 const shared = {
   entry: srcPath + "/index.ts",
